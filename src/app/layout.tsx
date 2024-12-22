@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Honk, Poppins, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import AnimatedCursor from "react-animated-cursor"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +11,25 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const honk = Honk({
+  variable: "--font-honk",
+  subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+  weight: ['100', '200', '300', '400', '500', '600', '700']
 });
 
 export const metadata: Metadata = {
@@ -24,9 +44,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} ${honk.variable} ${poppins.variable} ${robotoMono.variable} antialiased`}>
+        <AnimatedCursor
+          innerSize={8}
+          outerSize={35}
+          innerScale={1}
+          outerScale={1.5}
+          outerAlpha={0}
+          showSystemCursor
+          trailingSpeed={5}
+          innerStyle={{
+            backgroundColor: 'var(--cursor-color)'
+          }}
+          outerStyle={{
+            border: '3px solid var(--cursor-color)'
+          }}
+        />
         {children}
       </body>
     </html>
