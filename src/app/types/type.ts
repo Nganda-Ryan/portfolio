@@ -6,3 +6,12 @@ export interface CodeCardType {
     children?: React.ReactNode;
     cumstomCss?: React.ReactNode;
 }
+
+export interface ProjectCardType {
+    title?: string;
+    img: string;
+    demo: string;
+    repo: string;
+    children?: React.ReactNode;
+    cumstomCss?: React.ReactNode;
+}

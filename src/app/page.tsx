@@ -1,6 +1,7 @@
 import CodeCard from "@/components/CodeCard";
 import Image from "next/image";
 import Header from "@/components/Header";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   const expertise = [
@@ -14,7 +15,7 @@ export default function Home() {
     {
       id: "EXP02",
       title: "Frontend Dev",
-      tech: ['React, NextJS'],
+      tech: ['React', 'NextJS', 'VueJS'],
       description: "Passionate about UI/UX. Over 5 years of development experience in HTML, CSS, JS, React and NextJS frameworks.",
       logo: "/react.svg"
     },
@@ -32,6 +33,37 @@ export default function Home() {
     //   description: "Passionate about UI/UX. Over 5 years of development experience in HTML, CSS, JS, React and NextJS frameworks.",
     //   logo: "/react.svg"
     // },
+  ]
+
+  const projects = [
+    {
+      id: "proj1",
+      title: "Tryotel – Cross-Platform Travel App",
+      img: "/proj1.jpg",
+      demo: "#",
+      repo: "#",
+    },
+    {
+      id: "proj2",
+      title: "Tryotel Web (B2C)",
+      img: "/proj2.jpg",
+      demo: "#",
+      repo: "#",
+    },
+    {
+      id: "proj3",
+      title: "AI Lab Granada",
+      img: "/proj3.jpg",
+      demo: "#",
+      repo: "#",
+    },
+    {
+      id: "proj4",
+      title: "All the roads of Chittagong",
+      img: "/proj4.jpg",
+      demo: "#",
+      repo: "#",
+    },
   ]
   
   return (
@@ -59,8 +91,9 @@ export default function Home() {
                 alt="FrontWindowMain"
                 className="absolute inset-0 max-w-full align-middle"
               />
-              <div className="flex justify-center items-center flex-nowrap absolute inset-0 max-w-full align-middle honk-font text-3xl xxs:text-4xl xs:text-5xl sm:text-6xl md:text-7xl l">
-                STEVE WORLD✨
+              <div className="flex justify-center flex-col items-center flex-nowrap absolute inset-0 max-w-full align-middle honk-font text-3xl xxs:text-4xl xs:text-5xl sm:text-6xl md:text-6xl">
+                NGANDA WORLD
+                <span className="text-xl xxs:text-2xl xs:text-3xl sm:text-4xl md:text-4xl">Fullstack Web Developer</span>
               </div>
             </div>
             <div className="absolute max-w-[34%] top-auto right-auto bottom-[-15%] left-[-18%] -rotate-15">
@@ -110,7 +143,7 @@ export default function Home() {
           width={24}
           height={360}
           alt="FrontWindowMain"
-          className="max-h-[44vw] md:max-h-[440px] relative bottom-[13.3vw]"
+          className="max-h-[42vw] md:max-h-[440px] relative bottom-[13.3vw]"
         />
       </section>
 
@@ -126,7 +159,11 @@ export default function Home() {
       </section>
 
       <div className="relative bottom-[12vw]">
-        <section className="flex justify-center">
+        <section>
+          <div className="mb-11 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-3xl xxs:text-5xl xs:text-7xl sm:text-9xl md:text-7xl">
+            Expertise
+          </div>
+          <div className="flex justify-center">
           <div className="flex items-stretch flex-wrap justify-center px-5 sm:px-0 md:flex-row md:mx-10 max-w-[1140px] gap-1 xxs:gap-2 md:gap-0">
             {
               expertise.map(exp => {
@@ -140,6 +177,7 @@ export default function Home() {
               })
             }
           </div>
+          </div>
         </section>
         <section>
           <div className="relative w-fit mx-auto opacity-20 -m-5">
@@ -149,10 +187,29 @@ export default function Home() {
               width={768}
               height={384}
               alt="hello-world-html-code"
-              className="max-h-[291px] max-w-[582px] relative"
+              className="max-h-[291px] xs:max-w-[582px] relative"
           />
           </div>
         </section>
+        <section>
+          <div className="mb-11 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-3xl xxs:text-5xl xs:text-7xl sm:text-9xl md:text-7xl">
+            Projects
+          </div>
+          <div className="px-5 xs:px-4 mx-auto max-w-[1140px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {
+              projects.map(proj => {
+                return <ProjectCard 
+                  key={proj.id}
+                  title={proj.title}
+                  img={proj.img}
+                  demo={proj.demo}
+                  repo={proj.repo}
+                />
+              })
+            }
+          </div>
+        </section>
+
       </div>
     </div>
   );
