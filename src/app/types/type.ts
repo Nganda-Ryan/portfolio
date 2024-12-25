@@ -15,3 +15,8 @@ export interface ProjectCardType {
     children?: React.ReactNode;
     cumstomCss?: React.ReactNode;
 }
+
+export interface ButtonType {
+    children?: React.ReactNode;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}

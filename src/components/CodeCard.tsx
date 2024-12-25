@@ -1,10 +1,11 @@
 import React from 'react';
 import { CodeCardType } from '@/app/types/type';
 import Image from "next/image";
+import Strip from './ui/Strip';
 
 const CodeCard = ({ title, tech, description, cumstomCss, logo }: CodeCardType) => {
   return (
-    <div className={`h-auto w-full sm:w-10/12 md:w-1/2 lg:w-1/3 border-2 border-zinc-300 p-9 sm:py-12 hover:bg-[#1d242d89] duration-300 ${cumstomCss}`}>
+    <div className={`holographic-card h-auto w-full sm:w-10/12 md:w-1/2 lg:w-1/3 border-2 border-zinc-300 p-9 sm:py-12 hover:bg-[#1d242d89] duration-300 ${cumstomCss}`}>
         {/* header */}
         <div className='flex items-center h-16 text-2xl sm:text-3xl md:text-2xl'>
             <div className="relative h-[42px] w-[42px] mr-5 flex justify-center items-center">
@@ -16,8 +17,10 @@ const CodeCard = ({ title, tech, description, cumstomCss, logo }: CodeCardType) 
                 />
             </div>
             <div className='poppins-font font-bold'>
-                <div className="relative after:content-[''] after:absolute after:left-0 after:bottom-1 after:w-full after:h-1/3 after:bg-red-400 after:z-[-1]">{title}</div>
-                <div className=''>{tech?.join(", ")}</div>
+                <Strip color='bg-red-400'>
+                    {title}
+                </Strip>
+                <div className='text-lg sm:text-xl md:text-lg'>{tech?.join(", ")}</div>
             </div>
         </div>
         {/* content */}
