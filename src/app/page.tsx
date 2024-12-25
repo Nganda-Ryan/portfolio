@@ -120,6 +120,7 @@ export default function Home() {
       <section className="w-full p-0 object-fill relative overflow-hidden">
         <div className="lg:max-w-[940px] max-w-[752px] h-full mx-auto mb-[12%]">
           <div className="max-w-3/4 h-full mx-auto relative inset-0">
+            {/* frame */}
             <div>
               <Image
                 src="/FrontWindowMain.svg"
@@ -138,12 +139,10 @@ export default function Home() {
                 alt="FrontWindowMain"
                 className="absolute inset-0 max-w-full align-middle"
               />
-              <div className="flex justify-center flex-col items-center flex-nowrap absolute inset-0 max-w-full align-middle honk-font text-3xl xxs:text-4xl xs:text-5xl sm:text-6xl md:text-6xl">
-                NGANDA WORLD
-                <span className="text-xl xxs:text-2xl xs:text-3xl sm:text-4xl md:text-4xl">Fullstack Web Developer</span>
-              </div>
             </div>
-            <div className="absolute max-w-[34%] top-auto right-auto bottom-[-15%] left-[-18%] -rotate-15">
+            
+            {/* ThumbsUp */}
+            <div className="absolute max-w-[30%] top-auto right-auto bottom-[-15%] left-[-18%] -rotate-15">
               <Image
                 src="/ThumbsUp_Shadow.svg"
                 width={400}
@@ -161,7 +160,9 @@ export default function Home() {
                 className="absolute inset-0 max-w-full align-middle"
               />
             </div>
-            <div className="absolute max-w-[36%] top-auto right-[-25%] bottom-[-23%] left-auto rotate-35">
+
+            {/* Pineapple */}
+            <div className="absolute max-w-[32%] top-auto right-[-25%] bottom-[-23%] left-auto rotate-35">
               <Image
                 src="/Pineapple_Shadow.svg"
                 width={400}
@@ -176,6 +177,18 @@ export default function Home() {
                 height={760}
                 alt="FrontWindowMain"
                 className="absolute inset-0 max-w-full align-middle"
+              />
+            </div>
+            
+            {/* ryan */}
+            <div className="s-mask absolute flex items-center justify-center top-4 bottom-0 right-0 left-0 text-9xl">
+              <Image
+                src="/ryan-violet.png"
+                sizes="100vw"
+                width={472}
+                height={529}
+                alt="Ryan"
+                className="h-[110%] w-auto"
               />
             </div>
           </div>

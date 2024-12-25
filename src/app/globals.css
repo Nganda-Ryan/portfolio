@@ -101,6 +101,18 @@ html.dark-mode {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+.s-mask {
+  -webkit-mask: url(/mask4.svg);
+  mask: url(/mask4.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 49%; /* Réduit le masque à 50% de la taille de l'élément */
+  mask-size: 49%;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+
 
 @keyframes holographic-animation {
   0% {
