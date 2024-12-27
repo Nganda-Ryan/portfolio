@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
 import ExperienceCard from "@/components/ExperienceCard";
 import TypingEffect from "@/components/TypingEffect/TypingEffect";
+import Carousel from "@/components/Carousel/Carousel";
 
 export default function Home() {
   const expertise = [
@@ -226,7 +227,7 @@ export default function Home() {
       <div className="mt-14 lg:mt-20">
         {/* expertice */}
         <section>
-          <div className=" mb-8 sm:mb-11 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-4xl xs:text-5xl">
+          <div className=" mb-8 sm:mb-11 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-3xl sm:text-4xl lg:text-5xl">
             Expertise
           </div>
           <div className="flex justify-center">
@@ -262,7 +263,7 @@ export default function Home() {
 
         {/* Projects */}
         <section className="mb-32 sm:mb-56">
-          <div className=" mb-8 sm:mb-14 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-4xl xs:text-5xl">
+          <div className=" mb-8 sm:mb-14 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-3xl sm:text-4xl lg:text-5xl">
             Projects
           </div>
           <div className="px-5 xs:px-4 mx-auto max-w-[1240px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -282,8 +283,8 @@ export default function Home() {
 
 
         {/* Experience */}
-        <section>
-          <div className=" mb-8 sm:mb-14 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-4xl xs:text-5xl">
+        <section className="mb-32 sm:mb-56">
+          <div className=" mb-8 sm:mb-14 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-3xl sm:text-4xl lg:text-5xl">
             Experience
           </div>
           <div className="px-5 xs:px-4 mx-auto max-w-[940px]">
@@ -307,6 +308,16 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* Certification */}
+        <section>
+          <div className="sm:mb-14 flex sm:justify-center ml-5 sm:ml-0 justify-start flex-nowrap align-middle poppins-font font-bold text-3xl sm:text-4xl lg:text-5xl">
+            Certification
+          </div>
+          <div className="px-5 xs:px-4 mx-auto max-w-[940px]">
+          <Carousel />
+          </div>
+        </section>
         
 
       </div>
