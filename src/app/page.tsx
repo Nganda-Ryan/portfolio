@@ -122,7 +122,7 @@ export default function Home() {
           <div className="max-w-3/4 h-full mx-auto relative inset-0">
             {/* frame */}
             <div>
-              <Image
+              {/* <Image
                 src="/FrontWindowMain.svg"
                 sizes="100vw"
                 width={867}
@@ -138,11 +138,20 @@ export default function Home() {
                 height={550}
                 alt="FrontWindowMain"
                 className="absolute inset-0 max-w-full align-middle"
+              /> */}
+
+              <Image
+                src="/ryan-violet.png"
+                sizes="100vw"
+                width={472}
+                height={529}
+                alt="Ryan"
+                className="h-[110%] w-auto s-mask"
               />
             </div>
             
             {/* ThumbsUp */}
-            <div className="absolute max-w-[30%] top-auto right-auto bottom-[-15%] left-[-18%] -rotate-15">
+            <div className="absolute max-w-[30%] top-auto right-auto bottom-[0%] left-[-18%] -rotate-15">
               <Image
                 src="/ThumbsUp_Shadow.svg"
                 width={400}
@@ -162,7 +171,7 @@ export default function Home() {
             </div>
 
             {/* Pineapple */}
-            <div className="absolute max-w-[32%] top-auto right-[-25%] bottom-[-23%] left-auto rotate-35">
+            <div className="absolute max-w-[32%] top-auto right-[-25%] bottom-[0%] left-auto rotate-35">
               <Image
                 src="/Pineapple_Shadow.svg"
                 width={400}
@@ -181,7 +190,7 @@ export default function Home() {
             </div>
             
             {/* ryan */}
-            <div className="s-mask absolute flex items-center justify-center top-4 bottom-0 right-0 left-0 text-9xl">
+            {/* <div className="s-mask absolute flex items-center justify-center top-4 bottom-0 right-0 left-0 text-9xl">
               <Image
                 src="/ryan-violet.png"
                 sizes="100vw"
@@ -190,7 +199,7 @@ export default function Home() {
                 alt="Ryan"
                 className="h-[110%] w-auto"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
