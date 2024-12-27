@@ -8,7 +8,7 @@ const Header = () => {
         <div className='text-3xl font-bold flex flex-nowrap'>
             <DropdownMenu />
             <Link href="#" className='flex flex-nowrap'>
-                <div className='text-indigo-300 hover:text-cyan-400 transition-all'>
+                <div className='bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 transition-all duration-500 ease-in-out'>
                     <span>&#123;</span>
                     <span className='ml-[1px]'>NGANDA.</span>
                 </div>_
