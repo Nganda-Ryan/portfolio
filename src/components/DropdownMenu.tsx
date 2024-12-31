@@ -23,9 +23,9 @@ const DropdownMenu = () => {
         </button>
   
         {/* Dropdown */}
-        <div className={`fixed top-0 left-0 bg-[#1E1F26] text-white w-96 z-50 h-full transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        <div className={`fixed top-0 left-0 bg-[#1E1F26] text-white w-96 z-50 h-full transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
             {/* Header */}
-            <div className="mb-4 pl-6 pt-6 flex items-center justify-between">
+            <div className="mb-4 pl-6 pt-4 flex items-center justify-between">
                 <button className="bg-indigo-400 w-9 h-9 rounded-full -ml-1" onClick={toggleMenu}>
                     <span className="block text-xl font-bold">✕</span>
                 </button>
@@ -38,7 +38,7 @@ const DropdownMenu = () => {
             </div>
     
             {/* Navigation Title */}
-            <h2 className="opacity-60 text-xs uppercase mt-10 ml-6">Navigation</h2>
+            <h2 className="opacity-60 text-xs uppercase mt-7 ml-6">Navigation</h2>
             <div className="h-[1px] w-full bg-slate-500 mt-4"></div>
     
             {/* Links */}
@@ -48,6 +48,7 @@ const DropdownMenu = () => {
                     <a
                         key={path.name}
                         href={path.link}
+                        onClick={toggleMenu}
                         className={`py-2 text-lg block font-bold transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
                         style={{transitionDelay: `${index * 100}ms`}}
                     >

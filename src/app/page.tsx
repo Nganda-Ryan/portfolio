@@ -14,7 +14,7 @@ export default function Home() {
       id: "EXP01",
       title: "Frontend Dev",
       tech: ['NextJS', 'VueJS'],
-      description: "Front-end developer with 4 years of experience in building responsive, high-performance web applications. Skilled in JavaScript, TypeScript, and frameworks like NextJS and VueJS. Focused on creating seamless user interfaces, optimizing load times, and delivering intuitive, accessible, and engaging user experiences.",
+      description: "Front-end developer with 4 years of experience in creating responsive and high-performance web applications using JavaScript, TypeScript, NextJS, and VueJS. Skilled in delivering intuitive and accessible user experiences.",
       logo: "/react.svg",
       stripColor: StripBgColor.Blue
     },
@@ -22,7 +22,7 @@ export default function Home() {
       id: "EXP02",
       title: "Backend Dev",
       tech: ['Spring Boot, NestJS, Express.js'],
-      description: "Back-end developer with 3 years of experience in scalable architectures and secure server-side applications. Proficient in Java, JavaScript, and TypeScript, with expertise in Spring Boot, NestJS, and ExpressJS. Focused on efficient RESTful APIs and maintainable, business-driven solutions.",
+      description: "Back-end developer with 3 years of experience in scalable architectures and secure applications, skilled in Java, TypeScript, Spring Boot, and NestJS, specializing in efficient RESTful APIs and business-driven solutions.",
       logo: "/computer.svg",
       stripColor: StripBgColor.Green
     },
@@ -30,7 +30,7 @@ export default function Home() {
       id: "EXP03",
       title: "Flutter Dev",
       tech: ['Apex', 'LWC', 'Aura', 'Visualforce'],
-      description: "Salesforce developer with more than 2 years of experience in Apex, LWC, Aura, and Visualforce. Skilled in writing triggers, handling asynchronous operations (future, batch, etc.), testing, and exposing API endpoints. Experienced in integrating external systems, developing custom components, and leveraging declarative tools.",
+      description: "Salesforce developer with 3+ years of experience in Apex, LWC, Aura, and Visualforce, specializing in triggers, asynchronous operations, API integrations, and custom components.",
       logo: "/salesforce-icon.svg",
       stripColor: StripBgColor.Indigo
     },
@@ -52,9 +52,9 @@ export default function Home() {
     },
     {
       id: "EXP06",
-      title: "Cloud & Database Tech",
+      title: "Cloud & Database",
       tech: ['MySQL', 'MongoDB', 'Firebase', '...'],
-      description: "Experienced in working with cloud and database technologies to build scalable and secure web applications. Proficient in relational (PostgreSQL) and NoSQL (MongoDB) databases, cloud services for hosting and performance optimization (Firebase, Cloudflare), and media management (Cloudinary) for seamless integration and enhanced user experience.",
+      description: "Skilled in cloud and database technologies, with expertise in PostgreSQL, MongoDB, Firebase, Cloudflare, and Cloudinary, focused on building scalable, secure applications with optimized performance and seamless media integration.",
       logo: "/gear-svgrepo.svg",
       stripColor: StripBgColor.Red
     },
@@ -198,7 +198,7 @@ export default function Home() {
     <div className="min-h-screen overflow-hidden font-[family-name:var(--font-geist-sans)]">
       <Header />
       {/* Landing */}
-      <section>
+      <section className="mt-24">
         <div className="relative flex justify-between flex-col lg:flex-row w-full overflow-hidden mx-auto max-w-[1240px] sm:mt-20">
           <div className="p-7 pt-0 lg:w-[60%] text-lg">
             <h1 className="text-4xl font-extrabold mb-2">Salut ! 👋</h1>

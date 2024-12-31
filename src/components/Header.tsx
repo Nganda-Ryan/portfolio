@@ -6,7 +6,7 @@ import Image from 'next/image';
 const Header = () => {
     
   return (
-    <header id="section1" className="flex justify-between items-center mb-10 h-16 robotoMono-font py-10 px-5 md:p-10 md:px-7">
+    <header id="section1" className="z-[1000] bg-[#0D1117] fixed w-full flex justify-between items-center mb-10 h-10 robotoMono-font py-8 px-5 md:p-10 md:px-7">
         <div className='text-3xl sm:text-4xl font-bold flex flex-nowrap'>
             <DropdownMenu />
             <Link href="#section1" className='flex flex-nowrap'>

@@ -18,6 +18,7 @@ const Tilt = ({ children } : TiltProps) => {
           tiltElement.vanillaTilt = VanillaTilt.init(tiltElement, {
             max: 10,
             speed: 400,
+            gyroscope: false
             // glare: true,
             // "max-glare": 0.5
           });
