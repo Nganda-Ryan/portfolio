@@ -2,48 +2,25 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const Carousel = () => {
+interface CarouselItem {
+  src: string;
+  alt: string;
+  bg?: string;
+}
+
+export interface CarouselType {
+  images: CarouselItem[];
+}
+
+const Carousel = ({images}: CarouselType) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
-    { 
-        src: "/certification-gcp.png",
-        alt: "certification-gcp",
-        bg: "bg-white/10 backdrop-blur-lg rounded-lg shadow-lg"
-    },
-    { 
-        src: "/certification-Platform_Developer_I.png",
-        alt: "certification-gcp",
-        bg: "bg-blue-50"
-    },
-    { 
-        src: "/proj1.jpg",
-        alt: "Project 1",
-        bg: "bg-red-50"
-    },
-    { 
-        src: "/proj2.jpg",
-        alt: "Project 2",
-        bg: "bg-yello-50"
-    },
-    { 
-        src: "/proj3.jpg",
-        alt: "Project 3",
-        bg: "bg-violet-50"
-    },
-    { 
-        src: "/proj4.jpg",
-        alt: "Project 4",
-        bg: "bg-slate-50"
-    },
-  ];
-
   const handleNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => (prev + 1) % images.length);
   };
 
   const handlePrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
@@ -51,7 +28,7 @@ const Carousel = () => {
       <div className="relative w-full">
         {/* Carousel wrapper */}
         <div className="relative h-96 rounded-lg">
-          {slides.map((slide, index) => (
+          {images.map((slide, index) => (
             <div key={index}
               className={`absolute w-full h-full rounded-lg transition-opacity duration-700 ease-in-out ${
                 index === currentSlide ? "opacity-100" : "opacity-0"
@@ -70,7 +47,7 @@ const Carousel = () => {
 
         {/* Slider indicators */}
         <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3">
-          {slides.map((_, index) => (
+          {images.map((_, index) => (
             <button
               key={index}
               type="button"

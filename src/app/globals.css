@@ -30,6 +30,9 @@
   font-family: var(--font-space-grotesk), sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   color: var(--foreground);
@@ -106,10 +109,10 @@ html.dark-mode {
   mask: url(/mask4.svg);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-size: 100%; /* Réduit le masque à 50% de la taille de l'élément */
+  -webkit-mask-size: 100%;
   mask-size: 100%;
-  -webkit-mask-position: center;
-  mask-position: center;
+  -webkit-mask-position: center bottom; /* Positionne le masque vers le bas */
+  mask-position: center bottom;
 }
 
 
