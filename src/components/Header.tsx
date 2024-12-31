@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import DropdownMenu from './DropdownMenu';
-import Image from 'next/image';
 
 const Header = () => {
     
@@ -28,68 +27,6 @@ const Header = () => {
             </li>
             <li className="relative hover:text-cyan-400 font-semibold before:content-['4'] before:absolute before:right-0 before:-top-3 mx-3 text-nowrap before:text-xs mt-3 before:text-slate-400 transition-all">
                 <Link href="#section4">&#47;&#47;<span className='ml-1'>Certifications</span></Link>
-            </li>
-            <li className="relative mt-2.5 flex flex-nowrap items-center justify-center gap-3 mb-6 md:mb-0 ml-5">
-                {/* Email */}
-                <a
-                    href="mailto:steveloicnganda@gmail.com"
-                    className="transition transform hover:scale-110 hover:text-gray-200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image
-                    src="/email-icon.svg"
-                    alt="Email Icon"
-                    width={28}
-                    height={28}
-                    className="w-7 h-7"
-                    />
-                </a>
-                {/* WhatsApp */}
-                <a
-                    href="https://wa.me/+237690924753"
-                    className="transition transform hover:scale-110 hover:text-gray-200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image
-                    src="/whatsapp-icon.svg"
-                    alt="WhatsApp Icon"
-                    width={28}
-                    height={28}
-                    className="w-7 h-7"
-                    />
-                </a>
-                {/* LinkedIn */}
-                <a
-                    href="https://www.linkedin.com/in/steve-loic/"
-                    className="transition transform hover:scale-110 hover:text-gray-200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn Icon"
-                    width={28}
-                    height={28}
-                    className="w-7 h-7"
-                    />
-                </a>
-                {/* GitHub */}
-                <a
-                    href="https://github.com/Nganda-Ryan"
-                    className="transition transform hover:scale-110 hover:text-gray-200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image
-                    src="/github-icon.svg"
-                    alt="GitHub Icon"
-                    width={28}
-                    height={28}
-                    className="w-7 h-7"
-                    />
-                </a>
             </li>
         </ul>
     </header>

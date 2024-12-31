@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import React, { useState } from 'react'
 
 const paths = [
@@ -29,7 +30,7 @@ const DropdownMenu = () => {
                 <button className="bg-indigo-400 w-9 h-9 rounded-full -ml-1" onClick={toggleMenu}>
                     <span className="block text-xl font-bold">✕</span>
                 </button>
-                <div className="relative mr-5 flex justify-center items-center">
+                <div className="relative mr-7 flex justify-center items-center">
                     <div className='bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 transition-all duration-500 ease-in-out'>
                         <span>&#123;</span>
                         <span className='ml-[1px]'>NGANDA.</span>
@@ -42,7 +43,7 @@ const DropdownMenu = () => {
             <div className="h-[1px] w-full bg-slate-500 mt-4"></div>
     
             {/* Links */}
-            <div className="px-6" id="links">
+            <div className="relative h-full px-6" id="links">
                 {
                     paths.map((path, index) => (
                     <a
@@ -56,6 +57,69 @@ const DropdownMenu = () => {
                     </a>
                     ))
                 }
+                
+                <li className="absolute bottom-36 left-0 right-0 mt-2.5 flex flex-nowrap items-center justify-center gap-5 mb-6 md:mb-0 ml-5">
+                    {/* Email */}
+                    <a
+                        href="mailto:steveloicnganda@gmail.com"
+                        className="transition transform hover:scale-110 hover:text-gray-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Image
+                        src="/email-icon.svg"
+                        alt="Email Icon"
+                        width={28}
+                        height={28}
+                        className="w-7 h-7"
+                        />
+                    </a>
+                    {/* WhatsApp */}
+                    <a
+                        href="https://wa.me/+237690924753"
+                        className="transition transform hover:scale-110 hover:text-gray-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Image
+                        src="/whatsapp-icon.svg"
+                        alt="WhatsApp Icon"
+                        width={28}
+                        height={28}
+                        className="w-7 h-7"
+                        />
+                    </a>
+                    {/* LinkedIn */}
+                    <a
+                        href="https://www.linkedin.com/in/steve-loic/"
+                        className="transition transform hover:scale-110 hover:text-gray-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Image
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn Icon"
+                        width={28}
+                        height={28}
+                        className="w-7 h-7"
+                        />
+                    </a>
+                    {/* GitHub */}
+                    <a
+                        href="https://github.com/Nganda-Ryan"
+                        className="transition transform hover:scale-110 hover:text-gray-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Image
+                        src="/github-icon.svg"
+                        alt="GitHub Icon"
+                        width={28}
+                        height={28}
+                        className="w-7 h-7"
+                        />
+                    </a>
+                </li>
             </div>
         </div>
       </div>

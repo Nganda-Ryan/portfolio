@@ -52,7 +52,7 @@ export default function Home() {
     },
     {
       id: "EXP06",
-      title: "Cloud & Database",
+      title: "Cloud, Database",
       tech: ['MySQL', 'MongoDB', 'Firebase', '...'],
       description: "Skilled in cloud and database technologies, with expertise in PostgreSQL, MongoDB, Firebase, Cloudflare, and Cloudinary, focused on building scalable, secure applications with optimized performance and seamless media integration.",
       logo: "/gear-svgrepo.svg",
@@ -67,7 +67,7 @@ export default function Home() {
       img: "/restaurant-admin-plates.png",
       demo: "https://nwaar-restaurant-admin.netlify.app/",
       repo: "#",
-      description: "A web application built with Vue.js, Tailwind CSS, Cloudflare, and Cloudinary, enabling restaurant management to create detailed menus and track customer orders (in preparation, ongoing, completed)."
+      description: "Created a web application with Vue.js, Tailwind CSS, Cloudflare, and Cloudinary, enabling restaurants to design detailed menus and track customer orders (in preparation, ongoing, completed)."
     },
     {
       id: "proj2",
@@ -99,7 +99,7 @@ export default function Home() {
       img: "/portfolio-client-desktop.png",
       demo: "#",
       repo: "#",
-      description: "A personal portfolio built with Next.js and Tailwind CSS, designed to showcase my skills effectively. Focused on integrating engaging effects within a clean, intuitive, and straightforward navigation experience."
+      description: "Built a personal portfolio using Next.js and Tailwind CSS to effectively showcase my skills, featuring engaging effects and a clean, intuitive navigation experience."
     },
     {
       id: "proj6",
@@ -107,7 +107,7 @@ export default function Home() {
       img: "/itw.png",
       demo: "https://www.itw.com/",
       repo: "#",
-      description: "A Salesforce project digitizing the APQP process for an automotive parts manufacturer. As Solution Designer, I designed the system, used no-code tools, and developed test classes for robust functionality."
+      description: "Led a Salesforce project digitizing the APQP process, designing the system, leveraging no-code tools, and creating test classes for functionality."
     },
     {
       id: "proj7",
@@ -131,7 +131,7 @@ export default function Home() {
       img: "/ramdom-quote-generator.png",
       demo: "#",
       repo: "#",
-      description: "A React and Spring Boot app that generates random quotes with secure user authentication. The backend delivers quotes on each request, with tests conducted using Testcontainers and Mockito for reliability."
+      description: "Built a React and Spring Boot app for random quotes with secure authentication, tested with Testcontainers and Mockito."
     },
     {
       id: "proj10",

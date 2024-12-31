@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Honk, Poppins, Roboto_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-// import AnimatedCursor from "react-animated-cursor"
+import StickyContact from "@/components/StickyContact";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,21 +52,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`poppins-font ${geistSans.variable} ${geistMono.variable} ${honk.variable} ${poppins.variable} ${robotoMono.variable} ${spaceGrotesk.variable} antialiased`}>
-        {/* <AnimatedCursor
-          innerSize={8}
-          outerSize={35}
-          innerScale={1}
-          outerScale={1.5}
-          outerAlpha={0}
-          showSystemCursor
-          trailingSpeed={5}
-          innerStyle={{
-            backgroundColor: 'var(--cursor-color)'
-          }}
-          outerStyle={{
-            border: '3px solid var(--cursor-color)'
-          }}
-        /> */}
+        <StickyContact />
+        
         {children}
       </body>
     </html>
