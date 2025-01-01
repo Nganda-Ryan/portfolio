@@ -198,7 +198,7 @@ export default function Home() {
     <div className="min-h-screen overflow-hidden font-[family-name:var(--font-geist-sans)]">
       <Header />
       {/* Landing */}
-      <section className="mt-24">
+      <section id="section1" className="mt-24">
         <div className="relative flex justify-between flex-col lg:flex-row w-full overflow-hidden mx-auto max-w-[1240px] sm:mt-20">
           <div className="p-7 pt-0 lg:w-[60%] text-lg">
             <h1 className="text-4xl font-extrabold mb-2">Salut ! 👋</h1>

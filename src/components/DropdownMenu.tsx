@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 
 const paths = [
-    { name: "Home", link: "#section1" },
+    { name: "About me", link: "#section1" },
     { name: "Expertise", link: "#section2" },
     { name: "Project", link: "#section3" },
     { name: "Certification", link: "#section4" }
