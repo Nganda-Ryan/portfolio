@@ -28,7 +28,7 @@ export default function Home() {
     },
     {
       id: "EXP03",
-      title: "Flutter Dev",
+      title: "Salesforce Dev",
       tech: ['Apex', 'LWC', 'Aura', 'Visualforce'],
       description: "Salesforce developer with 3+ years of experience in Apex, LWC, Aura, and Visualforce, specializing in triggers, asynchronous operations, API integrations, and custom components.",
       logo: "/salesforce-icon.svg",
@@ -36,7 +36,7 @@ export default function Home() {
     },
     {
       id: "EXP04",
-      title: "Frontend Dev",
+      title: "UI/UX Enthusiast",
       tech: ['CSS', ' Tailwind CSS', ' Semantic UI'],
       description: "Front-end developer with expertise in advanced CSS, including 3D effects, and proficiency in Tailwind CSS, Semantic UI and Bootstrap. Skilled in crafting responsive, highly customizable designs with a focus on performance and scalability.",
       logo: "/interface-ui-ux-icon.svg",
