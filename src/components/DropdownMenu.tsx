@@ -1,4 +1,5 @@
 "use client"
+import { Download } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react'
 
@@ -13,6 +14,14 @@ const DropdownMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
+
+    
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/cv-main.pdf";   // chemin vers ton CV dans public/
+        link.download = "Mon-CV.pdf"; // nom du fichier téléchargé
+        link.click();
+    }
   
     return (
       <div>
@@ -59,6 +68,9 @@ const DropdownMenu = () => {
                 }
                 
                 <li className="absolute bottom-36 left-0 right-0 mt-2.5 flex flex-nowrap items-center justify-center gap-5 mb-6 md:mb-0 ml-5">
+                    <span onClick={handleDownload}>
+                        <Download/>
+                    </span>
                     {/* Email */}
                     <a
                         href="mailto:steveloicnganda@gmail.com"

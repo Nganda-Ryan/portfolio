@@ -1,10 +1,21 @@
+'use client'
+import { Download } from "lucide-react";
 import Image from "next/image";
 
 const Footer: React.FC = () => {
+    const handleDownload = () => {
+      const link = document.createElement("a");
+      link.href = "/cv-main.pdf";   // chemin vers ton CV dans public/
+      link.download = "Mon-CV.pdf"; // nom du fichier téléchargé
+      link.click();
+    }
   return (
     <footer className="flex flex-col md:flex-row justify-between items-center mt-10 h-auto py-10 px-5 md:px-10 bg-gray-900 text-gray-400">
       {/* Contact Links */}
       <div className="flex space-x-5 mb-6 md:mb-0">
+        <span onClick={handleDownload}>
+          <Download className="text-white hover:text-gray-200"/>
+        </span>
         {/* Email */}
         <a
           href="mailto:steveloicnganda@gmail.com"

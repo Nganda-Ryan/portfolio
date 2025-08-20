@@ -7,6 +7,8 @@ import TypingEffect from "@/components/TypingEffect/TypingEffect";
 import Carousel from "@/components/Carousel/Carousel";
 import Footer from "@/components/Footer/Footer";
 import { StripBgColor } from "./types/type";
+import { v4 as uuidv4 } from "uuid";
+import DownloadPdfButton from "@/components/DownloadPdfButton";
 
 export default function Home() {
   const expertise = [
@@ -16,7 +18,7 @@ export default function Home() {
       tech: ['NextJS', 'VueJS'],
       description: "Front-end developer with 4 years of experience in creating responsive and high-performance web applications using JavaScript, TypeScript, NextJS, and VueJS. Skilled in delivering intuitive and accessible user experiences.",
       logo: "/react.svg",
-      stripColor: StripBgColor.Blue
+      stripColor: StripBgColor.Blue,
     },
     {
       id: "EXP02",
@@ -27,66 +29,114 @@ export default function Home() {
       stripColor: StripBgColor.Green
     },
     {
-      id: "EXP03",
+      id: uuidv4(),
       title: "Salesforce Dev",
       tech: ['Apex', 'LWC', 'Aura', 'Visualforce'],
-      description: "Salesforce developer with 3+ years of experience in Apex, LWC, Aura, and Visualforce, specializing in triggers, asynchronous operations, API integrations, and custom components.",
+      description: "Salesforce developer with 3+ years of experience in Apex, LWC, Aura, and Visualforce, specializing in triggers, asynchronous operations, API integrations, and custom components. I also use low-code tools such as Flow Builder.",
       logo: "/salesforce-icon.svg",
       stripColor: StripBgColor.Indigo
     },
     {
-      id: "EXP04",
+      id: uuidv4(),
       title: "UI/UX Enthusiast",
-      tech: ['CSS', ' Tailwind CSS', ' Semantic UI'],
-      description: "Front-end developer with expertise in advanced CSS, including 3D effects, and proficiency in Tailwind CSS, Semantic UI and Bootstrap. Skilled in crafting responsive, highly customizable designs with a focus on performance and scalability.",
+      tech: [' Tailwind CSS', ' Shadcn', 'Headless UI'],
+      description: "Front-end developer with expertise in advanced CSS, including 3D effects, and proficiency in Tailwind CSS, Shadcn and Headless UI. Skilled in crafting responsive, highly customizable designs with a focus on performance and scalability.",
       logo: "/interface-ui-ux-icon.svg",
       stripColor: StripBgColor.Pink
     },
     {
-      id: "EXP05",
-      title: "Other tool",
+      id: uuidv4(),
+      title: "DevOps",
       tech: ['Git', 'Gitlab', ' Docker', '...'],
-      description: "Experienced in using version control tools (Git, GitHub, GitLab, Bitbucket) and containerization technologies like Docker and Kubernetes. Familiar with managing clusters, deploying applications, and leveraging Swarm for container orchestration in daily workflows.",
+      description: "Experienced in using version control tools (Git, GitHub, GitLab, Bitbucket), containerization technologies like Docker and Kubernetes and CI/CD Tool (GitHub Actions and GitLab CI/CD). Familiar with managing clusters, deploying applications, and leveraging Swarm for container orchestration in daily workflows.",
       logo: "/gear-svgrepo.svg",
       stripColor: StripBgColor.Gray
     },
     {
-      id: "EXP06",
+      id: uuidv4(),
       title: "Cloud, Database",
       tech: ['MySQL', 'MongoDB', 'Firebase', '...'],
       description: "Skilled in cloud and database technologies, with expertise in PostgreSQL, MongoDB, Firebase, Cloudflare, and Cloudinary, focused on building scalable, secure applications with optimized performance and seamless media integration.",
-      logo: "/gear-svgrepo.svg",
+      logo: "/server.svg",
       stripColor: StripBgColor.Red
     },
   ]
 
   const projects = [
     {
-      id: "proj1",
-      title: "ARON - Restaurant Menu and Ticket Management System",
-      img: "/restaurant-admin-plates.png",
-      demo: "https://nwaar-restaurant-admin.netlify.app/",
-      repo: "#",
-      description: "Created a web application with Vue.js, Tailwind CSS, Cloudflare, and Cloudinary, enabling restaurants to design detailed menus and track customer orders (in preparation, ongoing, completed)."
+      id: uuidv4(),
+      title: "TTM – Open Fiber - Italia",
+      img: "/of.png",
+      demo: "https://openfiber.it",
+      repo: "",
+      description: "A Salesforce-based application for managing Open Fiber trouble tickets, guiding diagnostics, works orders, and communications. Integrates with Smarthub, Tibco, PNI, and CRM systems through REST and SOAP APIs, automates data processing, and provides a graphical interface to track impacted resources and coordinate actions efficiently."
     },
     {
-      id: "proj2",
-      title: "ARON - Restaurant Order Management System",
-      img: "/restaurant-client-laptop_mobile.png",
-      demo: "https://nwaar-restaurant-client.netlify.app/",
-      repo: "#",
-      description: "A web application built with Vue.js, Tailwind CSS, and Cloudflare, replacing physical menus in restaurants. It enables customers to browse, order, and customize their meals digitally."
+      id: uuidv4(),
+      title: "Rai pubblicita - Italia",
+      img: "/rai-logo-blue.png",
+      demo: "https://www.raipubblicita.it",
+      repo: "",
+      description: "A Next.js web application for property management with Tailwind, ShadCN, and Cloudflare, featuring four user profiles: landlord, tenant, support, and account manager. Enables rental listing, rental score consultation, account validation, and delegated property management, with integrated PayPal for seamless financial operations."
     },
     {
-      id: "proj3",
-      title: "Take a look",
+      id: uuidv4(),
+      title: "Salesforce CPQ Support – IRCA Group",
+      img: "/irca.png",
+      demo: "https://www.raipubblicita.it",
+      repo: "",
+      description: "Provided technical support for Salesforce CPQ to IRCA Group’s global sales teams, handling tickets from multiple agencies and delivering timely solutions by email. Investigated and resolved configuration issues, implemented data corrections, and developed code fixes when required. Ensured smooth sales operations by combining functional troubleshooting with technical expertise in Salesforce customization and data management."
+    },
+    {
+      id: uuidv4(),
+      title: "Gespro+ - ITW - Italia",
+      img: "/itw.png",
+      demo: "https://www.itw.com/",
+      repo: "",
+      description: "Led a Salesforce project digitizing the APQP process, designing the system, leveraging code and a lot of no-code tools, and creating test classes for functionality."
+    },
+    {
+      id: uuidv4(),
+      title: "RentalAfrique",
       img: "/take-a-look.png",
       demo: "#",
       repo: "#",
-      description: "A Chrome extension built with React and Tailwind CSS for easy link sharing to social networks, with an admin page for adding new sharing options."
+      description: "A Next.js web application for property management with Tailwind, ShadCN, and Cloudflare, featuring four user profiles: landlord, tenant, support, and account manager. Enables rental listing, rental score consultation, account validation, and delegated property management, with integrated PayPal for seamless financial operations."
     },
     {
-      id: "proj4",
+      id: uuidv4(),
+      title: "University Management System",
+      img: "/epfps.png",
+      demo: "https://builder-spark-lab-gamma.vercel.app",
+      repo: "",
+      description: "A Next.js and Cloudflare-powered web platform designed for the University of Menganga, with authentication and access control handled via Appwrite. The system centralizes academic, financial, and administrative processes: from course and timetable management to exams, absences, and internships. It integrates payment tracking, resource management, and reporting dashboards, while ensuring security and scalability. With its modern stack and modular design, the platform provides students, teachers, and administrators a unified and efficient digital environment."
+    },
+    {
+      id: uuidv4(),
+      title: "ARON - Restaurant Menu and Ticket Management System",
+      img: "/restaurant-admin-plates.png",
+      demo: "https://nwaar-restaurant-admin.netlify.app/",
+      repo: "https://github.com/Nganda-Ryan/restaurant-admin.git",
+      description: "Created a web application with Vue.js, Tailwind CSS, Cloudflare, and Cloudinary, enabling restaurants to design detailed menus and track customer orders (in preparation, ongoing, completed)."
+    },
+    {
+      id: uuidv4(),
+      title: "ARON - Restaurant Order Management System",
+      img: "/restaurant-client-laptop_mobile.png",
+      demo: "https://nwaar-restaurant-client.netlify.app/",
+      repo: "https://github.com/Nganda-Ryan/restaurant.git",
+      description: "A web application built with Vue.js, Tailwind CSS, and Cloudflare, replacing physical menus in restaurants. It enables customers to browse, order, and customize their meals digitally."
+    },
+    {
+      id: uuidv4(),
+      title: "La Guilde des Codeur",
+      img: "/guideco2.png",
+      demo: "https://www.laguildedescodeurs.com/",
+      repo: "https://github.com/Nganda-Ryan/blog.git",
+      description: "A modern development blog built with Next.js, Tailwind, and Sanity, designed to share insightful tutorials and technical articles. Leveraging Incremental Static Regeneration, the platform ensures lightning-fast static performance for SEO while seamlessly refreshing content in the background, combining the best of static and dynamic web for an effortless publishing experience."
+    },
+    {
+      id: uuidv4(),
       title: "SHI-FU-MI",
       img: "/shi-fu-mi-desktop-top.png",
       demo: "#",
@@ -94,31 +144,31 @@ export default function Home() {
       description: "A fun and engaging rock-paper-scissors game with a cartoon theme, built using Next.js and Tailwind CSS. It combines playful visuals with smooth functionality for an enjoyable gaming experience"
     },
     {
-      id: "proj5",
-      title: "Portfolio",
-      img: "/portfolio-client-desktop.png",
+      id: uuidv4(),
+      title: "Take a look",
+      img: "/take-a-look.png",
       demo: "#",
       repo: "#",
+      description: "A Chrome extension built with React and Tailwind CSS for easy link sharing to social networks, with an admin page for adding new sharing options."
+    },
+    {
+      id: uuidv4(),
+      title: "LAAKAM Website template",
+      img: "/laakam.png",
+      demo: "https://laakam-vitrine.vercel.app",
+      repo: "https://github.com/Nganda-Ryan/laakam-vitrine.git",
+      description: "A Next.js and Cloudflare-powered web platform designed for the University of Menganga, with authentication and access control handled via Appwrite. The system centralizes academic, financial, and administrative processes: from course and timetable management to exams, absences, and internships. It integrates payment tracking, resource management, and reporting dashboards, while ensuring security and scalability. With its modern stack and modular design, the platform provides students, teachers, and administrators a unified and efficient digital environment."
+    },
+    {
+      id: uuidv4(),
+      title: "Portfolio",
+      img: "/portfolio-client-desktop.png",
+      demo: "https://nganda-steve.vercel.app/",
+      repo: "https://github.com/Nganda-Ryan/portfolio.git",
       description: "Built a personal portfolio using Next.js and Tailwind CSS to effectively showcase my skills, featuring engaging effects and a clean, intuitive navigation experience."
     },
     {
-      id: "proj6",
-      title: "Gespro+ - ITW",
-      img: "/itw.png",
-      demo: "https://www.itw.com/",
-      repo: "#",
-      description: "Led a Salesforce project digitizing the APQP process, designing the system, leveraging no-code tools, and creating test classes for functionality."
-    },
-    {
-      id: "proj7",
-      title: "NOELI - Wheater Component",
-      img: "/weather-app.png",
-      demo: "#",
-      repo: "#",
-      description: "A Lightning Web Component (LWC) designed to graphically display weather information for a selected area. Users can filter and select zones through an intuitive process for tailored weather visualization."
-    },
-    {
-      id: "proj8",
+      id: uuidv4(),
       title: "All the roads of Chittagong",
       img: "/card.png",
       demo: "#",
@@ -126,7 +176,7 @@ export default function Home() {
       description: "A visually engaging card created with HTML and CSS 3D effects. It opens interactively on hover to reveal a lorem ipsum text, showcasing dynamic and modern design."
     },
     {
-      id: "proj9",
+      id: uuidv4(),
       title: "Random quote generator",
       img: "/ramdom-quote-generator.png",
       demo: "#",
@@ -134,7 +184,7 @@ export default function Home() {
       description: "Built a React and Spring Boot app for random quotes with secure authentication, tested with Testcontainers and Mockito."
     },
     {
-      id: "proj10",
+      id: uuidv4(),
       title: "Todo App",
       img: "/todo-react-spring.png",
       demo: "#",
@@ -230,10 +280,14 @@ export default function Home() {
                   alt="Ryan"
                   className="w-full s-mask"
                 />
+                
+                <div className="text-center mt-10">
+                  <DownloadPdfButton/>
+                </div>
               </div>
               
               {/* ThumbsUp */}
-              <div className="hidden absolute max-w-[30%] top-auto right-auto bottom-[5%] left-[-17%] -rotate-15">
+              <div className=" absolute max-w-[30%] top-auto right-auto bottom-[5%] left-[-17%] -rotate-15">
                 <Image
                   src="/ThumbsUp_Shadow.svg"
                   width={400}
@@ -253,7 +307,7 @@ export default function Home() {
               </div>
 
               {/* Pineapple */}
-              <div className="hidden absolute max-w-[32%] top-auto right-[-18%] bottom-[3%] left-auto rotate-35">
+              <div className=" absolute max-w-[32%] top-auto right-[-18%] bottom-[3%] left-auto rotate-35">
                 <Image
                   src="/Pineapple_Shadow.svg"
                   width={400}
@@ -270,18 +324,6 @@ export default function Home() {
                   className="absolute inset-0 max-w-full align-middle"
                 />
               </div>
-              
-              {/* ryan */}
-              {/* <div className="s-mask absolute flex items-center justify-center top-4 bottom-0 right-0 left-0 text-9xl">
-                <Image
-                  src="/ryan-violet.png"
-                  sizes="100vw"
-                  width={472}
-                  height={529}
-                  alt="Ryan"
-                  className="h-[110%] w-auto"
-                />
-              </div> */}
             </div>
           </div>
         </div>
@@ -321,6 +363,9 @@ export default function Home() {
               }
             </div>
           </div>
+          <div className="text-center mt-10">
+            <DownloadPdfButton/>
+          </div>
         </section>
 
         {/* hello-world-html-code */}
@@ -355,6 +400,9 @@ export default function Home() {
                 />
               })
             }
+          </div>
+          <div className="text-center mt-10">
+            <DownloadPdfButton/>
           </div>
         </section>
 
@@ -393,7 +441,11 @@ export default function Home() {
             Certification
           </div>
           <div className="px-5 xs:px-4 mx-auto max-w-[940px]">
-          <Carousel images={certifictions}/>
+            <Carousel images={certifictions}/>
+          </div>
+          
+          <div className="text-center mt-10">
+            <DownloadPdfButton/>
           </div>
         </section>
         

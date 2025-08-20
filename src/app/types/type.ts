@@ -6,6 +6,8 @@ export interface CodeCardType {
     children?: React.ReactNode;
     cumstomCss?: string;
     stripColor?: StripBgColor
+    startClosure?: string;
+    endClosure?: string;
 }
 
 export interface ProjectCardType {

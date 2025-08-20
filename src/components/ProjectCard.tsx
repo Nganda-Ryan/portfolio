@@ -23,19 +23,19 @@ const ProjectCard = ({ title, img, demo, repo, cumstomCss, description }: Projec
           </div>
           <div className="text-left p-3.5 spaceGrotesk-font">
             <div className="text-lg font-bold text-white truncate overflow-hidden whitespace-nowrap">{title}</div>
-            <div className="mb-4 text-sm text-slate-300 italic line-clamp- h-28 overflow-hidden">{description}</div>
+            <div className="mb-4 text-sm text-slate-300 italic h-36 overflow-hidden">{description}</div>
             <div className="flex gap-3 justify-start">
               <div>
                 <Button>
-                  <Link href={repo}>
-                    Repo
+                  <Link href={demo}>
+                    {demo ? 'demo' : '-'}
                   </Link>
                 </Button>
               </div>
               <div>
                 <Button>
-                  <Link href={demo}>
-                    demo
+                  <Link href={repo}>
+                    {repo ? 'repo' : '-'}
                   </Link>
                 </Button>
               </div>
