@@ -14,6 +14,9 @@ const Contact = () => {
         <p className="mt-4 text-sm text-muted-2">{contact.availability}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button href={siteLinks.mailto}>Email me</Button>
+          <Button href={siteLinks.whatsapp} target="_blank" rel="noopener noreferrer">
+            WhatsApp me
+          </Button>
           <Button href={siteLinks.linkedin} target="_blank" rel="noopener noreferrer">
             Connect on LinkedIn
           </Button>
