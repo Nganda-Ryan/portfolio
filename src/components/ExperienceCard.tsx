@@ -28,9 +28,8 @@ const ExperienceCard = (props: ExperienceCardType) => {
         <ScrollAnimation animation='fade-right'>
             <div className="relative my-4">
                 <div className={`flex items-center justify-between rounded pl-7 pr-4 min-h-14 poppins-font font-bold text-white select-none cursor-pointer ${isOpen ? "bg-[#853eff] " : "bg-[#612dba] transition-all duration-[0.38s]"}`}  onClick={() => setIsOpen(!isOpen)}>
-                    <div className='flex flex-wrap flex-col xs:flex-row'>
-                        <span>{props.job}<span className='hidden xs:inline'> @ </span> </span>
-                        <span>{props.companyName}</span>
+                    <div className="min-w-0 flex-1 whitespace-nowrap overflow-hidden text-ellipsis pr-3 text-sm xs:text-base">
+                        {props.job} @ {props.companyName}
                     </div>
                     <div className="flex items-center flex-nowrap">
                         <span className="mr-5 hidden xs:inline-block">

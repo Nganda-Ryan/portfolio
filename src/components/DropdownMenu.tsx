@@ -1,136 +1,134 @@
 "use client"
-import { Download } from 'lucide-react';
-import Image from 'next/image';
-import React, { useState } from 'react'
-import { navItems } from '@/data/nav';
-import { siteLinks } from '@/data/site';
+import { Download } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { navItems } from "@/data/nav";
+import { siteLinks } from "@/data/site";
 
 const DropdownMenu = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-    const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+  const toggleMenu = () => setIsOpen((open) => !open);
 
-    
-    const handleDownload = () => {
-        const link = document.createElement("a");
-        link.href = siteLinks.resume;
-        link.download = "Steve-Loic-NGANDA-ONANA-Resume.pdf";
-        link.click();
-    }
-  
-    return (
-      <div>
-        <button onClick={toggleMenu} data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 mr-4 w-10 h-10 justify-center text-sm text-slate-500 rounded-lg lg:hidden hover:bg-slate-100 focus:outline-none dark:text-slate-400 dark:hover:bg-slate-700" aria-controls="navbar-default" aria-expanded="false">
-            <span className="sr-only">Open main menu</span>
-            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-        </button>
-  
-        {/* Dropdown */}
-        <div className={`fixed top-0 left-0 bg-menu text-foreground border-r border-border w-96 z-50 h-full transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
-            {/* Header */}
-            <div className="mb-4 pl-6 pt-4 flex items-center justify-between">
-                <button className="bg-indigo-400 w-9 h-9 rounded-full -ml-1" onClick={toggleMenu}>
-                    <span className="block text-xl font-bold">✕</span>
-                </button>
-                <div className="relative mr-4 flex justify-center items-center">
-                    <div className='bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 transition-all duration-500 ease-in-out'>
-                        <span>&#123;</span>
-                        <span className='ml-[1px]'>NGANDA.</span>
-                    </div>_
-                </div>
-            </div>
-    
-            {/* Navigation Title */}
-            <h2 className="opacity-60 text-xs uppercase mt-7 ml-6">Navigation</h2>
-            <div className="h-[1px] w-full bg-border mt-4"></div>
-    
-            {/* Links */}
-            <div className="relative h-full px-6" id="links">
-                {
-                    navItems.map((path, index) => (
-                    <a
-                        key={path.name}
-                        href={path.href}
-                        onClick={toggleMenu}
-                        className={`py-2 text-lg block font-bold transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
-                        style={{transitionDelay: `${index * 100}ms`}}
-                    >
-                        {path.name}
-                    </a>
-                    ))
-                }
-                
-                <li className="absolute bottom-36 left-0 right-0 mt-2.5 flex flex-nowrap items-center justify-center gap-5 mb-6 md:mb-0 ml-5">
-                    <span onClick={handleDownload}>
-                        <Download/>
-                    </span>
-                    {/* Email */}
-                    <a
-                        href={siteLinks.mailto}
-                        className="transition transform hover:scale-110 hover:text-gray-200"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Image
-                        src="/email-icon.svg"
-                        alt="Email Icon"
-                        width={28}
-                        height={28}
-                        className="w-7 h-7 invert dark:invert-0"
-                        />
-                    </a>
-                    {/* WhatsApp */}
-                    <a
-                        href={siteLinks.whatsapp}
-                        className="transition transform hover:scale-110 hover:text-gray-200"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Image
-                        src="/whatsapp-icon.svg"
-                        alt="WhatsApp Icon"
-                        width={28}
-                        height={28}
-                        className="w-7 h-7 invert dark:invert-0"
-                        />
-                    </a>
-                    {/* LinkedIn */}
-                    <a
-                        href={siteLinks.linkedin}
-                        className="transition transform hover:scale-110 hover:text-gray-200"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Image
-                        src="/linkedin-icon.svg"
-                        alt="LinkedIn Icon"
-                        width={28}
-                        height={28}
-                        className="w-7 h-7 invert dark:invert-0"
-                        />
-                    </a>
-                    {/* GitHub */}
-                    <a
-                        href={siteLinks.github}
-                        className="transition transform hover:scale-110 hover:text-gray-200"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Image
-                        src="/github-icon.svg"
-                        alt="GitHub Icon"
-                        width={28}
-                        height={28}
-                        className="w-7 h-7 invert dark:invert-0"
-                        />
-                    </a>
-                </li>
-            </div>
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeMenu();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isOpen]);
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = siteLinks.resume;
+    link.download = "Steve-Loic-NGANDA-ONANA-Resume.pdf";
+    link.click();
+  };
+
+  const menu = (
+    <div
+      className={`fixed inset-0 z-[1100] lg:hidden ${isOpen ? "visible" : "invisible pointer-events-none"}`}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Main menu"
+    >
+      <button
+        type="button"
+        className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
+        aria-label="Close menu"
+        onClick={closeMenu}
+      />
+      <div
+        className={`absolute top-0 left-0 flex h-dvh w-[min(100%,22rem)] flex-col bg-menu text-foreground shadow-xl transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex items-center justify-between px-5 pt-4 pb-2">
+          <button
+            type="button"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-400 text-xl font-bold text-white"
+            onClick={closeMenu}
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
+          <Link href="/" onClick={closeMenu} className="text-2xl font-bold">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-500">
+              <span>&#123;</span>
+              <span className="ml-[1px]">NGANDA.</span>
+            </span>
+            _
+          </Link>
+        </div>
+
+        <h2 className="mt-6 ml-6 text-xs uppercase tracking-widest text-muted-2">Navigation</h2>
+        <div className="mt-4 h-px w-full bg-border" />
+
+        <nav className="flex flex-1 flex-col px-6 pt-4">
+          {navItems.map((path) => (
+            <Link
+              key={path.name}
+              href={path.href}
+              onClick={closeMenu}
+              className="py-3 text-lg font-bold"
+            >
+              {path.name}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center justify-center gap-5 px-6 pb-10">
+          <button type="button" onClick={handleDownload} aria-label="Download resume">
+            <Download />
+          </button>
+          <a href={siteLinks.mailto} target="_blank" rel="noopener noreferrer">
+            <Image src="/email-icon.svg" alt="Email" width={28} height={28} className="h-7 w-7 invert-0" />
+          </a>
+          <a href={siteLinks.whatsapp} target="_blank" rel="noopener noreferrer">
+            <Image src="/whatsapp-icon.svg" alt="WhatsApp" width={28} height={28} className="h-7 w-7 invert-0" />
+          </a>
+          <a href={siteLinks.linkedin} target="_blank" rel="noopener noreferrer">
+            <Image src="/linkedin-icon.svg" alt="LinkedIn" width={28} height={28} className="h-7 w-7 invert-0" />
+          </a>
+          <a href={siteLinks.github} target="_blank" rel="noopener noreferrer">
+            <Image src="/github-icon.svg" alt="GitHub" width={28} height={28} className="h-7 w-7 invert-0" />
+          </a>
         </div>
       </div>
-    );
-}
+    </div>
+  );
 
-export default DropdownMenu
+  return (
+    <div>
+      <button
+        onClick={toggleMenu}
+        type="button"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground lg:hidden"
+        aria-controls="mobile-menu"
+        aria-expanded={isOpen}
+        aria-label="Open main menu"
+      >
+        <svg className="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      {mounted ? createPortal(menu, document.body) : null}
+    </div>
+  );
+};
+
+export default DropdownMenu;

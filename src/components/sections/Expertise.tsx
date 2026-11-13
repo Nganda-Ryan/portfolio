@@ -8,7 +8,7 @@ const Expertise = () => {
     <section id="expertise" className="mb-24 sm:mb-32 scroll-mt-28">
       <SectionHeading title={expertiseCopy.title} />
       <div className="flex justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 px-5 sm:px-0 md:mx-10 max-w-[1240px] gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 px-4 sm:px-0 md:mx-10 max-w-[1240px] gap-3">
           {expertise.map((item) => (
             <CodeCard
               key={item.id}
