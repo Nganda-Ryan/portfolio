@@ -21,7 +21,7 @@ export const expertise: ExpertiseItem[] = [
   },
   {
     id: "enterprise-salesforce",
-    title: "alesforce",
+    title: "Salesforce",
     tech: ["Apex", "Lightning Web Components", "Aura", "Visualforce", "Salesforce Flow", "Salesforce CPQ"],
     description:
       "I develop and customize enterprise solutions on Salesforce, from business process automation to custom components, platform integrations and application support.",
