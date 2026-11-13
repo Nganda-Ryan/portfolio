@@ -2,13 +2,8 @@
 import { Download } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react'
-
-const paths = [
-    { name: "About me", link: "#section1" },
-    { name: "Expertise", link: "#section2" },
-    { name: "Project", link: "#section3" },
-    { name: "Certification", link: "#section4" }
-];
+import { navItems } from '@/data/nav';
+import { siteLinks } from '@/data/site';
 
 const DropdownMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +13,8 @@ const DropdownMenu = () => {
     
     const handleDownload = () => {
         const link = document.createElement("a");
-        link.href = "/cv-main.pdf";   // chemin vers ton CV dans public/
-        link.download = "Mon-CV.pdf"; // nom du fichier téléchargé
+        link.href = siteLinks.resume;
+        link.download = "Steve-Loic-NGANDA-ONANA-Resume.pdf";
         link.click();
     }
   
@@ -33,13 +28,13 @@ const DropdownMenu = () => {
         </button>
   
         {/* Dropdown */}
-        <div className={`fixed top-0 left-0 bg-[#1E1F26] text-white w-96 z-50 h-full transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        <div className={`fixed top-0 left-0 bg-menu text-foreground border-r border-border w-96 z-50 h-full transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
             {/* Header */}
             <div className="mb-4 pl-6 pt-4 flex items-center justify-between">
                 <button className="bg-indigo-400 w-9 h-9 rounded-full -ml-1" onClick={toggleMenu}>
                     <span className="block text-xl font-bold">✕</span>
                 </button>
-                <div className="relative mr-7 flex justify-center items-center">
+                <div className="relative mr-4 flex justify-center items-center">
                     <div className='bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 transition-all duration-500 ease-in-out'>
                         <span>&#123;</span>
                         <span className='ml-[1px]'>NGANDA.</span>
@@ -49,15 +44,15 @@ const DropdownMenu = () => {
     
             {/* Navigation Title */}
             <h2 className="opacity-60 text-xs uppercase mt-7 ml-6">Navigation</h2>
-            <div className="h-[1px] w-full bg-slate-500 mt-4"></div>
+            <div className="h-[1px] w-full bg-border mt-4"></div>
     
             {/* Links */}
             <div className="relative h-full px-6" id="links">
                 {
-                    paths.map((path, index) => (
+                    navItems.map((path, index) => (
                     <a
                         key={path.name}
-                        href={path.link}
+                        href={path.href}
                         onClick={toggleMenu}
                         className={`py-2 text-lg block font-bold transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
                         style={{transitionDelay: `${index * 100}ms`}}
@@ -73,7 +68,7 @@ const DropdownMenu = () => {
                     </span>
                     {/* Email */}
                     <a
-                        href="mailto:steveloicnganda@gmail.com"
+                        href={siteLinks.mailto}
                         className="transition transform hover:scale-110 hover:text-gray-200"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -83,12 +78,12 @@ const DropdownMenu = () => {
                         alt="Email Icon"
                         width={28}
                         height={28}
-                        className="w-7 h-7"
+                        className="w-7 h-7 invert dark:invert-0"
                         />
                     </a>
                     {/* WhatsApp */}
                     <a
-                        href="https://wa.me/+237690924753"
+                        href={siteLinks.whatsapp}
                         className="transition transform hover:scale-110 hover:text-gray-200"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -98,12 +93,12 @@ const DropdownMenu = () => {
                         alt="WhatsApp Icon"
                         width={28}
                         height={28}
-                        className="w-7 h-7"
+                        className="w-7 h-7 invert dark:invert-0"
                         />
                     </a>
                     {/* LinkedIn */}
                     <a
-                        href="https://www.linkedin.com/in/steve-loic/"
+                        href={siteLinks.linkedin}
                         className="transition transform hover:scale-110 hover:text-gray-200"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -113,12 +108,12 @@ const DropdownMenu = () => {
                         alt="LinkedIn Icon"
                         width={28}
                         height={28}
-                        className="w-7 h-7"
+                        className="w-7 h-7 invert dark:invert-0"
                         />
                     </a>
                     {/* GitHub */}
                     <a
-                        href="https://github.com/Nganda-Ryan"
+                        href={siteLinks.github}
                         className="transition transform hover:scale-110 hover:text-gray-200"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -128,7 +123,7 @@ const DropdownMenu = () => {
                         alt="GitHub Icon"
                         width={28}
                         height={28}
-                        className="w-7 h-7"
+                        className="w-7 h-7 invert dark:invert-0"
                         />
                     </a>
                 </li>

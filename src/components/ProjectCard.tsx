@@ -22,8 +22,8 @@ const ProjectCard = ({ title, img, demo, repo, cumstomCss, description }: Projec
             />
           </div>
           <div className="text-left p-3.5 spaceGrotesk-font">
-            <div className="text-lg font-bold text-white truncate overflow-hidden whitespace-nowrap">{title}</div>
-            <div className="mb-4 text-sm text-slate-300 italic h-36 overflow-hidden">{description}</div>
+            <div className="text-lg font-bold text-foreground truncate overflow-hidden whitespace-nowrap">{title}</div>
+            <div className="mb-4 text-sm text-muted italic h-36 overflow-hidden">{description}</div>
             <div className="flex gap-3 justify-start">
               <div>
                 <Button>

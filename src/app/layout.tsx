@@ -40,8 +40,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "STEVE WORLD",
-  description: "NGANDA ONANA Steve Loic Portfolio",
+  title: "Steve Loïc NGANDA ONANA, Software Engineer",
+  description:
+    "Software Engineer focused on backend engineering, enterprise applications and system integrations. Salesforce, Java/Spring Boot, TypeScript/NestJS, React/Next.js.",
 };
 
 export default function RootLayout({
@@ -50,10 +51,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`poppins-font ${geistSans.variable} ${geistMono.variable} ${honk.variable} ${poppins.variable} ${robotoMono.variable} ${spaceGrotesk.variable} antialiased`}>
+    <html lang="en" className="dark">
+      <body className={`poppins-font ${geistSans.variable} ${geistMono.variable} ${honk.variable} ${poppins.variable} ${robotoMono.variable} ${spaceGrotesk.variable} antialiased bg-background text-foreground`}>
         <StickyContact />
-        
         {children}
       </body>
     </html>

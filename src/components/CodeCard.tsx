@@ -6,7 +6,7 @@ import Strip from './ui/Strip';
 const CodeCard = ({ title, tech, description, cumstomCss, logo, stripColor, startClosure='<h3>', endClosure='</h3>' }: CodeCardType) => {
   return (
     
-    <div data-aos="fade-up" className={`holographic-card h-auto w-full border-2 border-zinc-300 p-6 hover:bg-[#1d242d89] duration-300 ${cumstomCss}`}>
+    <div data-aos="fade-up" className={`holographic-card h-auto w-full border-2 border-border p-6 hover:bg-card-hover duration-300 ${cumstomCss}`}>
         {/* header */}
         <div className='flex items-center h-16 text-2xl sm:text-3xl md:text-2xl'>
             <div className="relative h-[42px] w-[42px] mr-5 flex justify-center items-center">
@@ -25,7 +25,7 @@ const CodeCard = ({ title, tech, description, cumstomCss, logo, stripColor, star
             </div>
         </div>
         {/* content */}
-        <div  className={`robotoMono-font text-sm sm:text-base relative my-9 ml-3 sm:ml-5 pl-3 border-l-2 border-white border-opacity-30 before:content-['${startClosure}'] before:text-sm before:sm:text-base md:before:text-sm before:absolute before:-top-6 before:-left-5 after:content-['${endClosure}'] after:text-sm after:sm:text-base md:after:text-sm after:absolute after:-bottom-6 after:-left-5 before:opacity-30 after:opacity-30`}>
+        <div  className={`robotoMono-font text-sm sm:text-base relative my-9 ml-3 sm:ml-5 pl-3 border-l-2 border-muted-3 before:content-['${startClosure}'] before:text-sm before:sm:text-base md:before:text-sm before:absolute before:-top-6 before:-left-5 after:content-['${endClosure}'] after:text-sm after:sm:text-base md:after:text-sm after:absolute after:-bottom-6 after:-left-5 before:opacity-30 after:opacity-30`}>
             {description}
         </div>
     </div>

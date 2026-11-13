@@ -23,6 +23,9 @@ export interface ProjectCardType {
 export interface ButtonType {
     children?: React.ReactNode;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    href?: string;
+    target?: string;
+    rel?: string;
 }
 
 export enum StripBgColor {

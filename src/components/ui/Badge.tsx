@@ -7,7 +7,7 @@ export interface BadgeType {
 
 const Badge = ({children, customCss} : BadgeType) => {
   return (
-    <span className={`py-1 px-2 rounded bg-[#7038cf] ${customCss}`}>
+    <span className={`py-1 px-2 rounded bg-[#7038cf] text-white ${customCss}`}>
         { children ? children : 'Add some text' }
     </span>
   )

@@ -7,8 +7,8 @@ const StickyContact = () => {
     
     const handleDownload = () => {
         const link = document.createElement("a");
-        link.href = "/cv-main.pdf";   // chemin vers ton CV dans public/
-        link.download = "Mon-CV.pdf"; // nom du fichier téléchargé
+        link.href = "/cv-main.pdf";
+        link.download = "Steve-Loic-NGANDA-ONANA-Resume.pdf";
         link.click();
     }
   return (
@@ -71,7 +71,7 @@ const StickyContact = () => {
         </a>
         {/* GitHub */}
         <a
-            href="https://github.com/Nganda-Ryan"
+            href="github.com/Nganda-Ryan"
             className="transition transform hover:scale-110 hover:text-gray-200"
             target="_blank"
             rel="noopener noreferrer"

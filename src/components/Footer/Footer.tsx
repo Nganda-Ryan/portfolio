@@ -1,89 +1,84 @@
 'use client'
 import { Download } from "lucide-react";
 import Image from "next/image";
+import { siteLinks } from "@/data/site";
 
 const Footer: React.FC = () => {
+    const year = new Date().getFullYear();
     const handleDownload = () => {
       const link = document.createElement("a");
-      link.href = "/cv-main.pdf";   // chemin vers ton CV dans public/
-      link.download = "Mon-CV.pdf"; // nom du fichier téléchargé
+      link.href = siteLinks.resume;
+      link.download = "Steve-Loic-NGANDA-ONANA-Resume.pdf";
       link.click();
     }
   return (
-    <footer className="flex flex-col md:flex-row justify-between items-center mt-10 h-auto py-10 px-5 md:px-10 bg-gray-900 text-gray-400">
-      {/* Contact Links */}
+    <footer className="flex flex-col md:flex-row justify-between items-center mt-10 h-auto py-10 px-5 md:px-10 bg-footer text-muted-2">
       <div className="flex space-x-5 mb-6 md:mb-0">
-        <span onClick={handleDownload}>
-          <Download className="text-white hover:text-gray-200"/>
-        </span>
-        {/* Email */}
+        <button type="button" onClick={handleDownload} aria-label="Download resume">
+          <Download className="text-foreground hover:text-muted"/>
+        </button>
         <a
-          href="mailto:steveloicnganda@gmail.com"
+          href={siteLinks.mailto}
           className="transition transform hover:scale-110 hover:text-gray-200"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
             src="/email-icon.svg"
-            alt="Email Icon"
+            alt="Email"
             width={28}
             height={28}
-            className="w-7 h-7"
+            className="w-7 h-7 invert dark:invert-0"
           />
         </a>
-        {/* WhatsApp */}
         <a
-          href="https://wa.me/+237690924753"
+          href={siteLinks.whatsapp}
           className="transition transform hover:scale-110 hover:text-gray-200"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
             src="/whatsapp-icon.svg"
-            alt="WhatsApp Icon"
+            alt="WhatsApp"
             width={28}
             height={28}
-            className="w-7 h-7"
+            className="w-7 h-7 invert dark:invert-0"
           />
         </a>
-        {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/steve-loic/"
+          href={siteLinks.linkedin}
           className="transition transform hover:scale-110 hover:text-gray-200"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
             src="/linkedin-icon.svg"
-            alt="LinkedIn Icon"
+            alt="LinkedIn"
             width={28}
             height={28}
-            className="w-7 h-7"
+            className="w-7 h-7 invert dark:invert-0"
           />
         </a>
-        {/* GitHub */}
         <a
-          href="https://github.com/Nganda-Ryan"
+          href={siteLinks.github}
           className="transition transform hover:scale-110 hover:text-gray-200"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
             src="/github-icon.svg"
-            alt="GitHub Icon"
+            alt="GitHub"
             width={28}
             height={28}
-            className="w-7 h-7"
+            className="w-7 h-7 invert dark:invert-0"
           />
         </a>
       </div>
 
-      {/* Copyright */}
       <div className="text-center text-sm md:text-base">
-        <p className="text-gray-500">
-          Designed & Built by Steve Loïc NGANDA ONANA
+        <p className="text-muted-3">
+          © {year} Steve Loïc NGANDA ONANA. Designed & built with care.
         </p>
-        <p className="mt-1 text-gray-600">© 2024 - All rights reserved</p>
       </div>
     </footer>
   );

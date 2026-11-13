@@ -23,9 +23,9 @@ interface ScrollAnimationProps {
     }, []);
   
     return (
-      <span data-aos={animation} className=''>
+      <div data-aos={animation}>
         {children}
-      </span>
+      </div>
     );
   };
   

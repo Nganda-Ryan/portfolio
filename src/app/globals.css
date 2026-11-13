@@ -2,17 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #0D1117;
+:root,
+.dark {
+  --background: #0d1117;
   --foreground: #ffffff;
+  --muted: #cbd5e1;
+  --muted-2: #94a3b8;
+  --muted-3: #64748b;
+  --card: #161b22;
+  --card-hover: #1d242d89;
+  --surface: #1c1c1e;
+  --header: rgba(13, 17, 23, 0.92);
+  --footer: #111827;
+  --menu: #1e1f26;
+  --border: #d4d4d8;
+  --cursor-color: #fff;
+  color-scheme: dark;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 .honk-font {
   font-family: var(--font-honk), sans-serif;
@@ -62,20 +68,11 @@ body {
   opacity: 0.3;
 }
 
-html {
-  --cursor-color: #fff
-}
-
-html.dark-mode {
-  --cursor-color: #333
-}
-
-
 .holographic-card {
   position: relative;
-  background: #161B22;
+  background: var(--card);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .holographic-card::before {
@@ -107,6 +104,10 @@ html.dark-mode {
 
 
 .holographic-card:hover {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.dark .holographic-card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
